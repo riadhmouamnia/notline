@@ -14,25 +14,21 @@ export default function Home() {
   const [signOut] = useSignOut(auth);
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center p-24 ${inter.className}`}
-    >
-      <h3 className="my-8">
+    <main className="flex min-h-screen flex-col items-center gap-4 text-center">
+      <h3 className="font-semibold text-xl my-4">
         {t("common:hello")} {user?.displayName}
       </h3>
-      <h1>Noteline App</h1>
-
-      <div className="flex gap-4">
-        <Link href="/" locale="en">
-          <span className="fi fi-gb rounded mr-2"></span> English
-        </Link>
-        <Link href="/" locale="fr">
-          <span className="fi fi-fr rounded mr-2"></span> Français
-        </Link>
-      </div>
-      <div>
-        {!user ? <LoginPage /> : <button onClick={signOut}>Logout</button>}
-      </div>
+      <h1 className="font-bold text-2xl">Welcome to Noteline App</h1>
+      <p className="text-sm">
+        Noteline is an application that allows teachers and students to capture
+        meaningful moments (“notes”) on a timeline, especially in a classroom
+        setting where the teacher wants to get student feedback and the students
+        want an easy way to communicate with the teacher and track interesting
+        moments during the presentation. Today, students raise their hand and
+        the teacher decides if it’s time to stop. With Noteline, the students
+        can communicate asynchronously with the teacher (and each other) by
+        posting notes to their shared timeline: their noteline.
+      </p>
     </main>
   );
 }
