@@ -28,10 +28,15 @@ function Navbar() {
       <Link href="/" className="flex-1">
         Noteline.
       </Link>
-      <div className="flex gap-4 items-center justify-center">
-        <Link href="/dashboard" className="flex-1">
-          Dashboard
-        </Link>
+      <div className="flex items-center justify-center">
+        <MenubarMenu>
+          <Link
+            className="rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground"
+            href="/dashboard"
+          >
+            Dashboard
+          </Link>
+        </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger>
             <MdOutlineLanguage className="text-xl" />
@@ -49,7 +54,7 @@ function Navbar() {
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        {user && (
+        {user ? (
           <MenubarMenu>
             <MenubarTrigger className="p-1">
               <Avatar className="h-6 w-6">
@@ -61,6 +66,13 @@ function Navbar() {
               <MenubarItem onClick={logOut}>logout</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
+        ) : (
+          <Link
+            className="rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground"
+            href="login"
+          >
+            Login
+          </Link>
         )}
       </div>
     </Menubar>
