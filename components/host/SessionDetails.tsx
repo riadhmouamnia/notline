@@ -1,7 +1,7 @@
 import { auth } from "@/lib/firebase-config";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-function SessionPreview({ sessionCode }: { sessionCode: string }) {
+function SessionDetails({ sessionCode }: { sessionCode: string }) {
   const [user, loading, error] = useAuthState(auth);
   const userId = user?.uid;
 
@@ -30,4 +30,4 @@ function SessionPreview({ sessionCode }: { sessionCode: string }) {
   );
 }
 
-export default SessionPreview;
+export default SessionDetails;

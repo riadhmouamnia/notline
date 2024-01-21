@@ -1,11 +1,11 @@
-import SessionPreview from "@/components/host/SessionPreview";
+import SessionDetails from "@/components/host/SessionDetails";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 function SessionPreviewPage({ sessionCode }: { sessionCode: string }) {
   return (
     <div className="mt-20 flex flex-col gap-4">
-      <SessionPreview sessionCode={sessionCode} />
+      <SessionDetails sessionCode={sessionCode} />
       <div className="flex flex-col md:flex-row justify-center flex-wrap gap-2">
         <Link className="flex-1" href={`/dashboard/host/${sessionCode}`}>
           <Button className="w-full" variant="default">
