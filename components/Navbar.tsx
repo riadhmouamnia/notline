@@ -63,7 +63,7 @@ function Navbar() {
               </Avatar>
             </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem onClick={logOut}>logout</MenubarItem>
+              <MenubarItem onClick={logOut}>Logout</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         ) : (

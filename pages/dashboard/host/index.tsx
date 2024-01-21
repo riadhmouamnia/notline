@@ -8,9 +8,11 @@ function HostPage() {
     <div className="flex flex-col space-y-8 items-center px-4 my-20">
       <SelectSessionForm />
       <SigninToSessionForm />
-      <Button variant="outline" className="w-full">
-        <Link href="/dashboard/host/create">New session</Link>
-      </Button>
+      <Link className="w-full" href="/dashboard/host/create">
+        <Button className="w-full" variant="outline">
+          New session
+        </Button>
+      </Link>
     </div>
   );
 }
