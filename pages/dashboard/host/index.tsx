@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function HostPage() {
   return (
-    <div className="flex flex-col space-y-8 items-center px-4 mt-20">
+    <div className="flex flex-col space-y-8 items-center px-4 my-20">
       <SelectSessionForm />
       <SigninToSessionForm />
       <Button variant="outline" className="w-full">
