@@ -1,4 +1,5 @@
 import CreateNewSeassionForm from "@/components/host/CreateNewSeassionForm";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function CreateSessionPage() {
   return (
@@ -9,3 +10,12 @@ function CreateSessionPage() {
 }
 
 export default CreateSessionPage;
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "host"])),
+    },
+    revalidate: 30,
+  };
+}

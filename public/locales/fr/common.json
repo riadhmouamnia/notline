@@ -1,3 +1,26 @@
 {
-    "hello": "Bonjour"
+  "accept": "Accepter",
+  "dashboard": "Tableau de bord",
+  "description": "Noteline est une application qui permet aux enseignants et aux élèves de capturer des moments significatifs (« notes ») sur une chronologie, en particulier dans une salle de classe où l'enseignant souhaite obtenir les commentaires des élèves et où les élèves souhaitent un moyen simple de communiquer avec l'enseignant et de suivre des événements intéressants. moments durant la présentation. Aujourd'hui, les élèves lèvent la main et le professeur décide s'il est temps d'arrêter. Avec Noteline, les élèves peuvent communiquer de manière asynchrone avec l'enseignant (et entre eux) en publiant des notes sur leur chronologie partagée : leur noteline.",
+  "descriptionRequired": "une description est requise",
+  "edit": "Modifier",
+  "hello": "Bonjour",
+  "host": "Hôte",
+  "hostNow": "Héberger maintenant",
+  "invalidSessionCode": "Format de code de session invalide. Le format attendu est CVCVC (par exemple, 'BODIK').",
+  "join": "Rejoindre",
+  "login": "Se connecter",
+  "logout": "Se déconnecter",
+  "newSession": "Nouvelle séance",
+  "pleaseSelectAction": "Veuillez sélectionner les boutons d'action.",
+  "pleaseSelectSession": "Veuillez sélectionner une session pour démarrer.",
+  "saveForLater": "Garder pour plus tard",
+  "submit": "Soumettre",
+  "titleRequired": "Le titre est requis",
+  "total": "Total",
+  "type": "Taper",
+  "usersConnected": "utilisateurs connectés",
+  "usersParticipated": "les utilisateurs ont participé.",
+  "viewDetailsOnline": "Voir les détails en ligne",
+  "welcome": "Bienvenue sur l'application Noteline"
 }

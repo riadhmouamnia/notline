@@ -1,5 +1,6 @@
 import SessionDetails from "@/components/host/SessionDetails";
 import { Button } from "@/components/ui/button";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 
 function SessionPreviewPage({ sessionCode }: { sessionCode: string }) {
@@ -26,12 +27,15 @@ export default SessionPreviewPage;
 
 export async function getServerSideProps({
   params,
+  locale,
 }: {
   params: { sessionCode: string };
+  locale: string;
 }) {
   const { sessionCode } = params;
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common", "host"])),
       sessionCode,
     },
   };

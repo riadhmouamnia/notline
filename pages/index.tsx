@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
-import LoginPage from "@/components/Login";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase-config";
 
@@ -18,17 +16,8 @@ export default function Home() {
       <h3 className="font-semibold text-xl my-4">
         {t("common:hello")} {user?.displayName}
       </h3>
-      <h1 className="font-bold text-2xl">Welcome to Noteline App</h1>
-      <p className="text-sm">
-        Noteline is an application that allows teachers and students to capture
-        meaningful moments (“notes”) on a timeline, especially in a classroom
-        setting where the teacher wants to get student feedback and the students
-        want an easy way to communicate with the teacher and track interesting
-        moments during the presentation. Today, students raise their hand and
-        the teacher decides if it’s time to stop. With Noteline, the students
-        can communicate asynchronously with the teacher (and each other) by
-        posting notes to their shared timeline: their noteline.
-      </p>
+      <h1 className="font-bold text-2xl">{t("common:welcome")}</h1>
+      <p className="text-sm">{t("common:description")}</p>
     </main>
   );
 }
@@ -36,7 +25,7 @@ export default function Home() {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common", "host"])),
     },
     revalidate: 30,
   };
