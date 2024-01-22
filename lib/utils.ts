@@ -41,3 +41,11 @@ export const isVowel = (char: string): boolean => {
 export const isConsonant = (char: string): boolean => {
   return !isVowel(char) && /[A-Z]/.test(char);
 };
+
+export const buttonColorMap: { [key: string]: string } = {
+  Question: "bg-red-500 hover:bg-red-500/90",
+  Aha: "bg-yellow-500 hover:bg-yellow-500/90",
+  "I'm lost": "bg-purple-500 hover:bg-purple-500/90",
+  Reference: "bg-blue-500 hover:bg-blue-500/90",
+  Comment: "bg-gray-500 hover:bg-gray-500/90",
+};
