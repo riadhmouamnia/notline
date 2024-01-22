@@ -12,8 +12,11 @@ import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase-config";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import LanguageMenu from "./ui/LanguageMenu";
+import { useTranslation } from "next-i18next";
 
 function Navbar() {
+  const { t } = useTranslation();
   const [signOut] = useSignOut(auth);
   const [user, loading, error] = useAuthState(auth);
 
@@ -34,25 +37,11 @@ function Navbar() {
             className="rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground"
             href="/dashboard"
           >
-            Dashboard
+            {t("common:dashboard")}
           </Link>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger>
-            <MdOutlineLanguage className="text-xl" />
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              <Link href="/" locale="en">
-                <span className="fi fi-gb rounded mr-2"></span> English
-              </Link>
-            </MenubarItem>
-            <MenubarItem>
-              <Link href="/" locale="fr">
-                <span className="fi fi-fr rounded mr-2"></span> Français
-              </Link>
-            </MenubarItem>
-          </MenubarContent>
+          <LanguageMenu />
         </MenubarMenu>
         {user ? (
           <MenubarMenu>
@@ -63,7 +52,7 @@ function Navbar() {
               </Avatar>
             </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem onClick={logOut}>Logout</MenubarItem>
+              <MenubarItem onClick={logOut}>{t("common:logout")}</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         ) : (
@@ -71,7 +60,7 @@ function Navbar() {
             className="rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground"
             href="login"
           >
-            Login
+            {t("common:login")}
           </Link>
         )}
       </div>

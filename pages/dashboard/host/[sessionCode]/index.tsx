@@ -20,6 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function SessionPage({ sessionCode }: { sessionCode: string }) {
   const sessionEvents: TimelineEventProps[] = [
@@ -170,12 +171,15 @@ export default SessionPage;
 
 export async function getServerSideProps({
   params,
+  locale,
 }: {
   params: { sessionCode: string };
+  locale: string;
 }) {
   const { sessionCode } = params;
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common", "host"])),
       sessionCode,
     },
   };

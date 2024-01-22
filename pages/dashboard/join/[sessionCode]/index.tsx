@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { buttonColorMap } from "@/lib/utils";
 import { UsersRound } from "lucide-react";
 
 import {
@@ -21,6 +20,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export const buttonColorMap: { [key: string]: string } = {
+  Question: "bg-red-500 hover:bg-red-500/90",
+  Aha: "bg-yellow-500 hover:bg-yellow-500/90",
+  "I'm lost": "bg-purple-500 hover:bg-purple-500/90",
+  Reference: "bg-blue-500 hover:bg-blue-500/90",
+  Comment: "bg-gray-500 hover:bg-gray-500/90",
+};
 
 function JoinSessionPage({ sessionCode }: { sessionCode: string }) {
   const sessionButtons = [
@@ -131,12 +139,15 @@ export default JoinSessionPage;
 
 export async function getServerSideProps({
   params,
+  locale,
 }: {
   params: { sessionCode: string };
+  locale: string;
 }) {
   const { sessionCode } = params;
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common", "host"])),
       sessionCode,
     },
   };

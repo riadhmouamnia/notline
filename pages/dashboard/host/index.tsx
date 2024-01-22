@@ -1,6 +1,7 @@
 import SelectSessionForm from "@/components/host/SelectSessionForm";
 import SigninToSessionForm from "@/components/host/SigninToSessionForm";
 import { Button } from "@/components/ui/button";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 
 function HostPage() {
@@ -18,3 +19,12 @@ function HostPage() {
 }
 
 export default HostPage;
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "host"])),
+    },
+    revalidate: 30,
+  };
+}
