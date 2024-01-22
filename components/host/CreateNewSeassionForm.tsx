@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { useState } from "react";
-import { generateCode, generatePin } from "@/lib/utils";
+import { buttonColorMap, generateCode, generatePin } from "@/lib/utils";
 import { useRouter } from "next/router";
 
 const formSchema = z.object({
@@ -59,14 +59,6 @@ function CreateNewSeassionForm() {
   const allButtons = ["Question", "Aha", "I'm lost", "Reference", "Comment"];
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const router = useRouter();
-
-  const buttonColorMap: { [key: string]: string } = {
-    Question: "bg-red-500 hover:bg-red-500/90",
-    Aha: "bg-yellow-500 hover:bg-yellow-500/90",
-    "I'm lost": "bg-purple-500 hover:bg-purple-500/90",
-    Reference: "bg-blue-500 hover:bg-blue-500/90",
-    Comment: "bg-gray-500 hover:bg-gray-500/90",
-  };
 
   // Function to handle favorite button click
   const handleFavoriteButtonClick = (button: string) => {
