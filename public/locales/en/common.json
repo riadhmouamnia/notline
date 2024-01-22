@@ -1,3 +1,26 @@
 {
-    "hello": "hello"
+  "accept": "Accept",
+  "dashboard": "Dashboard",
+  "description": "Noteline is an application that allows teachers and students to capture\n        meaningful moments (“notes”) on a timeline, especially in a classroom\n        setting where the teacher wants to get student feedback and the students\n        want an easy way to communicate with the teacher and track interesting\n        moments during the presentation. Today, students raise their hand and\n        the teacher decides if it’s time to stop. With Noteline, the students\n        can communicate asynchronously with the teacher (and each other) by\n        posting notes to their shared timeline: their noteline.",
+  "descriptionRequired": "description is required",
+  "edit": "Edit",
+  "hello": "Hello",
+  "host": "Host",
+  "hostNow": "Host now",
+  "invalidSessionCode": "Invalid session code format. The expected format is CVCVC (e.g., 'BODIK').",
+  "join": "Join",
+  "login": "Login",
+  "logout": "Logout",
+  "newSession": "New session",
+  "pleaseSelectAction": "Please select the action buttons.",
+  "pleaseSelectSession": "Please select a session to start.",
+  "saveForLater": "Save for later",
+  "submit": "Submit",
+  "titleRequired": "Title is required",
+  "total": "Total",
+  "type": "Type",
+  "usersConnected": "users connected",
+  "usersParticipated": "users participated.",
+  "viewDetailsOnline": "View Details online",
+  "welcome": "Welcome to Noteline App"
 }
